@@ -1,39 +1,63 @@
 @import "../../sass/mixins.scss";
 
 .card {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content min-content 60px;
+  grid-row-gap: 1rem;
+  align-items: center;
   border: 2px solid grey;
   border-radius: 10px;
   height: 100%;
   width: 100%;
-  padding: 4rem;
-  @include flex-center();
+  padding: 1.5rem;
   box-shadow: 3px 3px 10px 10px rgba(0, 0, 0, 0.05);
-
-  * {
-    font-weight: normal;
-  }
 
   h4 {
     text-align: center;
     font-size: 1.6rem;
     margin: 0;
-    margin-bottom: 0.5rem;
   }
 
   h6 {
-    text-align: center;
+    color: rgb(126, 126, 126);
+    text-align: right;
     font-size: 1.4rem;
     margin: 0;
-    margin-bottom: 0.5rem;
   }
 
   p {
     font-size: 1.4rem;
+    margin: 0;
+  }
+
+  a,
+  a:link,
+  a:visited {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: orangered;
   }
 }
 
 .expand {
   grid-column: span 2;
   grid-row: span 2;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+
+  h4 {
+    margin-bottom: 1rem;
+  }
+
+  h6 {
+    margin-bottom: 4rem;
+  }
+
+  p {
+    flex-grow: 1;
+  }
 }

@@ -22,17 +22,17 @@ const StoryList: React.FC<Props> = ({ stories }) => {
     <section className={styles.section}>
       {stories && stories.length > 0 ? (
         stories.map(story => {
-          if (story) {
-            return (
-              <Story
-                story={story}
-                // key={story.id}
-                isExpanded={expandedId === story.id}
-                onClick={onClickHandler}
-                key={story.id}
-              />
-            );
+          if (!story) {
+            return story;
           }
+          return (
+            <Story
+              story={story}
+              key={story.id}
+              isExpanded={expandedId === story.id}
+              onClick={onClickHandler}
+            />
+          );
         })
       ) : (
         <div>Spinner</div>
