@@ -1,0 +1,39 @@
+@import "../../sass/mixins.scss";
+
+.card {
+  display: block;
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  @include flex-center();
+  box-shadow: 3px 3px 10px 10px rgba(0, 0, 0, 0.05);
+
+  * {
+    font-weight: normal;
+  }
+
+  h4 {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
+
+.expand {
+  grid-column: span 2;
+  grid-row: span 2;
+}
