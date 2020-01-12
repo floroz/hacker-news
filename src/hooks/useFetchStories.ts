@@ -47,7 +47,7 @@ const useFetchStories = (): IStoryHook => {
         // For each story id fetches a story object and saves it into the storiesList
         await Promise.all(
           listOfStoryIds.map(async (storyId: number | undefined) => {
-            if (storyId !== undefined) {
+            if (storyId) {
               const res = await fetch(
                 `https://hacker-news.firebaseio.com/v0/item/${storyId}.json`
               );
