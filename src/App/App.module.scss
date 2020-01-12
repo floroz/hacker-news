@@ -5,6 +5,7 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -24,4 +25,8 @@
   font-size: 1.7rem;
   margin: 0 auto;
   align-self: center;
+  border: 1px solid orangered;
+  border-radius: 5px;
+  color: orangered;
+  cursor: pointer;
 }

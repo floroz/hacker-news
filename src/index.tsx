@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App/App";
 import * as serviceWorker from "./serviceWorker";
 import "modern-normalize/modern-normalize.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./sass/global.scss";
 
 ReactDOM.render(<App />, document.getElementById("root"));
