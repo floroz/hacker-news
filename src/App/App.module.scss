@@ -1,12 +1,24 @@
 @import "../sass/mixins.scss";
 
 .main {
-  height: 100vh;
   padding: 5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .title {
   font-size: 3.5rem;
   font-weight: normal;
   margin-bottom: 3.5rem;
+  align-self: center;
+}
+
+.more {
+  outline: none;
+  padding: 2rem 4rem;
+  font-size: 1.7rem;
+  margin: 0 auto;
+  align-self: center;
 }

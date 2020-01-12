@@ -9,7 +9,7 @@ interface IStoryHook {
 
 const useFetchStories = (): IStoryHook => {
   const [stories, setStoriesLocal] = useState<IStory[] | null>(null);
-  const [isFetching, setIsFetching] = useState(false);
+  const [isFetching, setIsFetching] = useState(true);
   const [{ startAt, limitAt }, setPagination] = useState({
     startAt: 0,
     limitAt: 50
@@ -19,6 +19,7 @@ const useFetchStories = (): IStoryHook => {
     if (isFetching) {
       return;
     }
+    setIsFetching(true);
     setPagination(state => ({
       startAt: state.startAt + 50,
       limitAt: state.limitAt + 50
@@ -63,6 +64,7 @@ const useFetchStories = (): IStoryHook => {
 
     fetchStories().then(newStories => {
       setStoriesLocal(stories => {
+        setIsFetching(false);
         if (stories && stories.length > 0) {
           return stories.concat(newStories);
         } else {

@@ -9,7 +9,6 @@ interface Props {
 
 const StoryList: React.FC<Props> = ({ stories }) => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
-  console.log("stories in StoryList: ", stories);
 
   const onClickHandler = (id: number) => {
     if (expandedId !== id) {
@@ -21,15 +20,20 @@ const StoryList: React.FC<Props> = ({ stories }) => {
 
   return (
     <section className={styles.section}>
-      {stories.length > 0 ? (
-        stories.map(story => (
-          <Story
-            story={story}
-            // key={story.id}
-            isExpanded={expandedId === story.id}
-            onClick={onClickHandler}
-          />
-        ))
+      {stories && stories.length > 0 ? (
+        stories.map(story => {
+          if (story) {
+            return (
+              <Story
+                story={story}
+                // key={story.id}
+                isExpanded={expandedId === story.id}
+                onClick={onClickHandler}
+                key={story.id}
+              />
+            );
+          }
+        })
       ) : (
         <div>Spinner</div>
       )}

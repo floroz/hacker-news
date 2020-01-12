@@ -21,7 +21,8 @@ const Story: React.FC<Props> = ({ story, isExpanded, onClick }) => {
     >
       <h4>{reducedTitle}</h4>
       <h6>{by}</h6>
-      <p>{text}</p>
+      <a href={url}>Read more...</a>
+      {isExpanded && text && <p>{text}</p>}
     </article>
   );
 };
